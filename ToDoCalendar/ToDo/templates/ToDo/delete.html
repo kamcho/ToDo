@@ -1,0 +1,26 @@
+{% extends 'ToDo/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+    <br><br>
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label >{{ code }}</label>
+            <input class="form-control"  name="delete" placeholder="enter above code to delete"  required></input>
+          </div>
+        </div>
+        <br>
+
+        <button class="btn btn-danger" name="purge" id="purge" >Delete</button>
+    </form>
+
+</div>
+
+
+
+{% endblock %}

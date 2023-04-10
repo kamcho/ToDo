@@ -1,0 +1,18 @@
+{% extends 'ToDo/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+  <br><br>
+
+    {% for task in tasks %}
+
+    <h6><a href="{% url 'info' task.id %}">{{ task.title }}</a></h6>
+        <p class="text-muted">{{ task.about }}</p>
+        <p class="text-muted">{{ task.reminder }}</p>
+
+    {% endfor %}
+
+</div>
+{% endblock %}

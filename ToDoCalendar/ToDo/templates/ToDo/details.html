@@ -1,0 +1,42 @@
+{% extends 'ToDo/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container">
+<br><br>
+        <p class="text-muted">{{ task.expiry }}</p>
+         <div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label >Title</label>
+            <input class="form-control"  name="title" placeholder="meet John Doe" value="{{ task.title }}"  ></input>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>About</label>
+            <textarea class="form-control"  name="about" placeholder="lorem ipsum gem......."   >{{ task.about }}</textarea>
+          </div>
+        </div>
+        <br>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label >Remind Me On</label>
+            <input type="datetime-local" class="form-control"  name="date" placeholder="join google meet" value="{{ task.reminder }}" required></input>
+          </div>
+        </div>
+        <br>
+                <button class="btn btn-info" name="edit" id="edit">Edit</button>         <button name="delete" id="delete" style="margin-left:10px;" class="btn btn-warning">Delete</button>
+
+
+    </form>
+  </div>
+
+    </div>
+
+{% endblock %}
