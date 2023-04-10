@@ -7,8 +7,7 @@
 
     {% for task in tasks %}
 
-    <h6><a href="{% url 'info' task.id %}">{{ task.title }}</a></h6>
-        <p class="text-muted">{{ task.about }}</p>
+    <h6><a style="text-decoration:none;color:black;" href="{% url 'info' task.id %}">{{ task.title }}</a></h6>
         <p class="text-muted">{{ task.reminder }}</p>
 
     {% endfor %}
