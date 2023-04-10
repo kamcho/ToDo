@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ToDo',
-    'crispy_forms',
+
 
 ]
 
@@ -127,4 +127,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-CRISPY_TEMPLATE_TAG='bootstrap4'
