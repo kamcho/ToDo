@@ -31,12 +31,18 @@ class UpdateTask(DetailView):
             title=request.POST.get('title')
             about=request.POST.get('about')
             date=request.POST.get('date')
+            print(date)
+            print("\n\n\n\n\n")
 
             if "edit" in request.POST:
+
                 task=Task.objects.get(id=self.kwargs['pk'])
                 task.title=title
                 task.about=about
-                task.reminder=date
+                if date :
+                    task.reminder=date
+
+
                 task.save()
                 return redirect(request.path)
             else:
